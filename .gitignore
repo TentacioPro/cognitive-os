@@ -1,0 +1,16 @@
+AgenticLoop/
+polymath-os-android/
+worktrees/
+reference/CiggTrack/
+reference/langgraphjs/
+reference/maaxly/
+uvicorn.err
+uvicorn.out
+uvicorn.pid
+night/pids/
+node_modules/
+__pycache__/
+*.pyc
+*.env
+*.env.*
+*cred*

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(git status*)", "Bash(git add*)", "Bash(git commit*)",
+      "Bash(git push origin task/*)", "Bash(git push origin chore/*)",
+      "Bash(git push origin feat/ui-revamp-v4)",
+      "Bash(git checkout*)", "Bash(git merge*)", "Bash(git rebase*)",
+      "Bash(git worktree*)", "Bash(git log*)", "Bash(git diff*)",
+      "Bash(git fetch*)", "Bash(git pull*)",
+      "Bash(uv *)", "Bash(npx jest*)", "Bash(npm *)",
+      "Bash(bun *)", "Bash(bunx *)",
+      "Bash(docker start cog-mongo)",
+      "Bash(docker run --name cog-mongo*mongo:7*)",
+      "Bash(docker ps*)",
+      "Bash(mkdir*)", "Bash(ls*)", "Bash(cat*)",
+      "Bash(curl -s http://127.0.0.1*)",
+      "Edit", "Write", "Read", "Glob", "Grep",
+      "Bash(netstat*)", "Bash(Get-NetTCPConnection*)"
+    ],
+    "deny": [
+      "Bash(git push*main*)", "Bash(git push --force*)", "Bash(git branch -D*)",
+      "Bash(rm -rf*)", "Bash(git reset --hard*)",
+      "Read(./backend/.env)", "Read(**/.env)",
+      "Bash(pkill*)", "Bash(taskkill /IM*)", "Bash(Stop-Process -Name*)",
+      "Bash(docker stop*)", "Bash(docker rm*)", "Bash(docker restart*)",
+      "Bash(docker compose down*)", "Bash(docker kill*)",
+      "WebFetch", "WebSearch"
+    ]
+  },
+  "disableBundledSkills": true
+}
