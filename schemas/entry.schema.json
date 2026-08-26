@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TentacioPro/cognitive-os/blob/main/schemas/entry.schema.json",
+  "title": "Cognitive OS Life Entry",
+  "description": "The canonical envelope for one observation, measurement, or manually recorded life event.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "domain",
+    "value",
+    "unit",
+    "notes",
+    "sentiment",
+    "energy",
+    "timestamp"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable UUID for deduplication across SQLite, JSONL, and Git.",
+      "format": "uuid"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Active domain name, such as health, work, relationships, or learning.",
+      "minLength": 1
+    },
+    "value": {
+      "description": "The observation or measurement. Keep the original meaning; do not invent a value.",
+      "anyOf": [
+        { "type": "number" },
+        { "type": "string" },
+        { "type": "boolean" },
+        { "type": "array" },
+        { "type": "object" }
+      ]
+    },
+    "unit": {
+      "description": "Unit for a numeric or measurable value; null when no unit applies.",
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "notes": {
+      "description": "Human-readable context or the normalized transcript.",
+      "type": ["string", "null"]
+    },
+    "sentiment": {
+      "description": "Optional normalized sentiment score from -1 (negative) to 1 (positive).",
+      "type": ["number", "null"],
+      "minimum": -1,
+      "maximum": 1
+    },
+    "energy": {
+      "description": "Optional self-reported or extracted energy level on a 1–10 scale.",
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "maximum": 10
+    },
+    "timestamp": {
+      "description": "When the observation happened or was captured, as an ISO 8601 date-time with timezone.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "description": "Capture adapter that produced the record.",
+      "type": "string",
+      "enum": ["voxlog", "telegram", "logseq", "manual", "import"]
+    },
+    "source_ref": {
+      "description": "Stable reference to the original recording, message, or note when available.",
+      "type": ["string", "null"]
+    },
+    "raw_text": {
+      "description": "Original transcript or text before categorization.",
+      "type": ["string", "null"]
+    },
+    "extraction_method": {
+      "description": "How structured fields were produced.",
+      "type": "string",
+      "enum": ["gemini-flash", "local-fallback", "manual", "import"]
+    },
+    "created_at": {
+      "description": "When this canonical record was written, as an ISO 8601 date-time with timezone.",
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

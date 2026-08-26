@@ -1,0 +1,15 @@
+{
+  "id": "8c4f5d42-4f91-4b11-8ad6-5e6b4f6c1b23",
+  "domain": "health",
+  "value": 30,
+  "unit": "minutes",
+  "notes": "Walked after lunch and felt more focused afterward.",
+  "sentiment": 0.7,
+  "energy": 8,
+  "timestamp": "2026-08-26T12:30:00+05:30",
+  "source": "voxlog",
+  "source_ref": "voxlog://example/2026-08-26/1230",
+  "raw_text": "Walked for 30 minutes after lunch; I feel more focused.",
+  "extraction_method": "local-fallback",
+  "created_at": "2026-08-26T12:31:00+05:30"
+}

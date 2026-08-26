@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TentacioPro/cognitive-os/blob/main/schemas/domain.schema.json",
+  "title": "Cognitive OS Domain Definition",
+  "description": "A configurable life domain used to categorize entries and describe domain-specific fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "icon",
+    "color",
+    "schema_json",
+    "active"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Stable human-readable domain name used by entries.",
+      "minLength": 1
+    },
+    "icon": {
+      "type": "string",
+      "description": "Short icon identifier or Unicode symbol used by review clients.",
+      "minLength": 1
+    },
+    "color": {
+      "type": "string",
+      "description": "CSS-compatible color token, preferably a six-digit hexadecimal color.",
+      "pattern": "^(#[0-9A-Fa-f]{6}|[A-Za-z][A-Za-z0-9_-]*)$"
+    },
+    "schema_json": {
+      "description": "JSON object containing optional domain-specific validation rules.",
+      "type": "object"
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether new entries may currently be assigned to this domain."
+    }
+  }
+}
