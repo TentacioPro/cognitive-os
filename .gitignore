@@ -14,3 +14,11 @@ __pycache__/
 *.env
 *.env.*
 *cred*
+
+# Generated runtime/test artifacts
+**/dist/
+**/test-results/
+**/playwright-report/
+**/playwright-mobile-report/
+reference/scaffold/backend/data/
+test-results/

@@ -1,0 +1,15 @@
+appId: com.tentacio.cognitiveos
+---
+- launchApp
+- assertVisible: "Cognitive OS"
+- assertVisible: "Make your life legible."
+- tapOn: "Capture"
+- assertVisible: "What is present?"
+- tapOn: "Observation"
+- inputText: "Maestro capture smoke test"
+- tapOn: "Stage observation"
+- assertVisible: "See the pattern."
+- tapOn: "Review"
+- assertVisible: "Maestro capture smoke test"
+- tapOn: "Confirm entry"
+- assertVisible: "committed"

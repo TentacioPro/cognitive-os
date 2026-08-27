@@ -21,7 +21,7 @@ function validateBody(schema) {
     }
     if (errors.length > 0) {
       req.auditDenialReason = `validation failed: ${errors.join('; ')}`;
-      return res.status(400).json({ error: 'invalid request', details: errors });
+      return res.status(400).json({ error: 'invalid request', details: errors, request_id: req.requestId });
     }
     next();
   };
