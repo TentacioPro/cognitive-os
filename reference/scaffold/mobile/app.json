@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Cognitive OS",
+    "slug": "cognitive-os",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": { "bundleIdentifier": "com.tentacio.cognitiveos" },
+    "android": { "package": "com.tentacio.cognitiveos" },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
